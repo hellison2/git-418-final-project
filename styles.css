@@ -102,6 +102,12 @@ header {
     color: var(--tan);
 }
 
+#light-mode {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
 nav h2 {
     display: none;
 }
