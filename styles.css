@@ -55,13 +55,23 @@ table {
 @import url("");
 
 :root {
-    
+    --brown: #624F41;
+    --orange: #AD560B;
+    --tan: #E6EAAE;
+    --light-green: #0B5B1E;
+    --dark-green: #053906;
 }
 
 body {
     width: 1280px;
     max-width: 100%;
     margin: auto;
+    background-color: var(--tan);
+}
+
+body.dark-mode {
+    background-color: var(--dark-green);
+    color: white;
 }
 
 h1 {
@@ -117,6 +127,12 @@ nav a:hover {
 
 
 /* ---- ABOUT SECTION ---- */
+#about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
 
 
 
@@ -124,6 +140,9 @@ nav a:hover {
 #learn {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
 }
 
 #learn div {
