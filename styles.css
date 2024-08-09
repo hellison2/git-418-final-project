@@ -145,6 +145,11 @@ nav a:hover {
     padding: 20px;
 }
 
+#learn img {
+    width: 200px;
+    height: auto;
+}
+
 #learn div {
     display: flex;
     flex-direction: column;
