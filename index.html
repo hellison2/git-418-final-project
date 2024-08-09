@@ -8,6 +8,10 @@
 
         <link rel="stylesheet" href="styles.css">
         <script src="script.js" defer></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
     </head>
 
     <body>
@@ -37,7 +41,9 @@
             <section id="about">
                 <h2>About Us</h2>
 
-                <p>example</p>
+                <p>Explore Colorado is an outdoor and exploration-oriented organization. Our mission is to help educate travelers and new residents about Colorado's unique history, geographic features, and culture.</p>
+
+                <p>We started in 2024 and plan to expand to the surrounding states in the western United States. Our ultimate goal is to create a network of resources throughout each state to help all those who pass through.</p>
             </section>
 
             <section id="learn">
@@ -56,6 +62,53 @@
                 <h2>Visualize</h2>
 
                 <p>The best way to see Colorado is in person, but here's a few stunning photos to get you dreaming of hiking and roadtrips in the meantime.</p>
+
+                <div id="slideshow">
+                    <div class="mySlides">
+                        <div class="slide-number">1/6</div>
+
+                        <img src="images/landscape-one.jpg" alt="Yellow fall foliage in Colorado with fog in the background">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="slide-number">2/6</div>
+
+                        <img src="images/landscape-two.jpg" alt="A crystal clear alpine lake surrounded by pine trees">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="slide-number">3/6</div>
+
+                        <img src="images/landscape-three.jpg" alt="A historic gray brick house with a snowy mountain in the background">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="slide-number">4/6</div>
+
+                        <img src="images/landscape-four.jpg" alt="Orange fall foliage with a cozy cabin in the center, with snowy mountains in the background">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="slide-number">5/6</div>
+
+                        <img src="images/landscape-five.jpg" alt="A drone shot of snowy Colorado mountains and an empty road">
+                    </div>
+
+                    <div class="mySlides">
+                        <div class="slide-number">6/6</div>
+
+                        <img src="images/landscape-six.jpg" alt="Lush green grass and forests in front of a jagged mountain in the sunset">
+                    </div>
+
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
+                <div style="text-align:center">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
             </section>
 
             <section id="weather">
