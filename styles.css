@@ -103,9 +103,9 @@ header {
 }
 
 #light-mode {
-    position: relative;
+    position: absolute;
     top: 0;
-    right: 0;
+    right: 20px;
 }
 
 nav h2 {
