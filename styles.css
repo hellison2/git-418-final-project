@@ -119,11 +119,13 @@ nav a {
     padding: 20px;
     font-weight: 200;
     font-size: 1.5rem;
-}
-/* edit later */
-nav a:hover {
     color: white;
     background-color: var(--orange);
+}
+
+nav a:hover {
+    color: white;
+    background-color: var(--light-green);
 }
 
 
