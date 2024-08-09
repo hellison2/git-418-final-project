@@ -69,11 +69,6 @@ body {
     background-color: var(--tan);
 }
 
-body.dark-mode {
-    background-color: var(--dark-green);
-    color: white;
-}
-
 h1 {
     font-weight: 600;
     font-size: 5rem;
@@ -87,6 +82,13 @@ h2 {
 p {
     font-weight: 200;
     font-size: 1.25rem;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: var(--dark-green);
+        color: white;
+    }
 }
 
 
@@ -120,8 +122,8 @@ nav a {
 }
 /* edit later */
 nav a:hover {
-    color: ;
-    background-color: ;
+    color: white;
+    background-color: var(--orange);
 }
 
 
@@ -142,10 +144,11 @@ nav a:hover {
     flex-direction: row;
     align-items: center;
     padding: 20px;
+    text-align: center;
 }
 
 #learn img {
-    width: 500px;
+    width: 350px;
     height: auto;
 }
 
