@@ -6,19 +6,25 @@
         <meta name="author" content="Vena Ellison">
         <title>GIT 418 Final Project</title>
 
-        <link rel="stylesheet" href="styles.css">
-        <script src="script.js" defer></script>
-
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200..800&family=Merienda:wght@300..900&display=swap" rel="stylesheet">
+        <!-- 
+        I tried to add a slider for the gallery section, but to make the slider work I'd have to add this. 
+        Any time I have this link active, it makes my accordion stop working.
+
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.0/themes/base/jquery-ui.css">
+        -->
+        <link rel="stylesheet" href="styles.css">
+
+        <script src="script.js" defer></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+        <script src="https://code.jquery.com/ui/1.14.0/jquery-ui.js"></script>
     </head>
 
     <body>
         <header>
-            <div id="light-mode">
-                <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
-            </div>
+            <button class="lighting-toggle"><span class="slider"></span>Dark Mode</button>
             
             <h1 id="home">Explore Colorado</h1>
 
@@ -51,7 +57,9 @@
                 <div>
                     <h2>Learn About Colorado</h2>
 
-                    <p>example</p>
+                    <p>Colorado has been home to humans for thousands of years. During most of that time, indigenous groups controlled the land. In the late 1500s, Spanish colonists invaded the land and remained in control until the early 1800s. In the 1800s, after a series of expansions and conflicts, Colorado fell under the control of the U.S. It became a state in 1876.</p>
+
+                    <p>Today, Colorado is home to almost 6 million people. The people of Colorado enjoy a high standard of living, most of which are surrounded by beautiful, pristine nature and mountains, making weekend excursions a must for travelers and residents. Popular activities include white water rafting, skiing, hiking, sightseeing, kayaking, and camping.</p>
                 </div>
 
                 <img src="images/vertical-two.jpg" alt="A man standing on a scenic overlook in Colorado">
@@ -64,65 +72,68 @@
 
                 <div id="slideshow">
                     <div class="mySlides">
-                        <div class="slide-number">1/6</div>
-
                         <img src="images/landscape-one.jpg" alt="Yellow fall foliage in Colorado with fog in the background">
                     </div>
 
                     <div class="mySlides">
-                        <div class="slide-number">2/6</div>
-
                         <img src="images/landscape-two.jpg" alt="A crystal clear alpine lake surrounded by pine trees">
                     </div>
 
                     <div class="mySlides">
-                        <div class="slide-number">3/6</div>
-
                         <img src="images/landscape-three.jpg" alt="A historic gray brick house with a snowy mountain in the background">
                     </div>
 
                     <div class="mySlides">
-                        <div class="slide-number">4/6</div>
-
                         <img src="images/landscape-four.jpg" alt="Orange fall foliage with a cozy cabin in the center, with snowy mountains in the background">
                     </div>
 
                     <div class="mySlides">
-                        <div class="slide-number">5/6</div>
-
                         <img src="images/landscape-five.jpg" alt="A drone shot of snowy Colorado mountains and an empty road">
                     </div>
 
                     <div class="mySlides">
-                        <div class="slide-number">6/6</div>
-
                         <img src="images/landscape-six.jpg" alt="Lush green grass and forests in front of a jagged mountain in the sunset">
                     </div>
-
-                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
                 </div>
 
-                <div style="text-align:center">
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                </div>
+                <button class="prev" onclick="prevSlide()">&#10094;</button>
+                <button class="next" onclick="nextSlide()">&#10095;</button>
+
+                <div id="slider"></div>
             </section>
 
             <section id="weather">
                 <h2>What's The Weather Like in Colorado?</h2>
 
-                <p>You can use our crafty little weather tool to see what the current weather is like in some of Colorado's bigger towns and cities.</p>
+                <p>You can use the weather tool to see what the current weather is like in some of Colorado's bigger towns and cities.</p>
 
-                <p>If it doesn't work the first time, try entering a city with a bigger population, as we can't collect data on super small towns.</p>
+                <p>If it doesn't work the first time, try entering a city with a bigger population, as we can't access data on super-small towns.</p>
+
+                <div>
+                    <input type="text" id="cityInput" placeholder="Enter a city in Colorado">
+                    <button id="fetchWeatherBtn">Get Weather</button>
+                    <div id="weatherResult"></div>
+                </div>
             </section>
 
             <section id="facts">
                 <h2>Fun Facts About Colorado</h2>
 
-                <div>
+                <div id="accordion">
+                    <h3>Fact #1: Highest paved roads</h3>
+                    <p>Colorado is home to the highest paved road in any national park within the United States. The road is called Trail Ridge Road, and it’s located in Rocky Mountain National Park. It passes iconic NP mountains and peaks at 12,183 feet above sea level. But Colorado doesn’t stop there, as the state is also home to the highest paved road in the U.S. Mount Blue Sky Scenic Byway reaches a height of 14,130 feet above sea level.</p>
 
+                    <h3>Fact #2: The mile-high city</h3>
+                    <p>Denver is Colorado’s largest city, and it’s nicknamed the mile-high city because its elevation sits at about 5,280 feet or exactly one mile. Elevation can vary depending on where you are in the city, but you can look out for mile-high meters all around to figure out if you’re exactly a mile high or not.</p>
+
+                    <h3>Fact #3: Sand dunes and plains lands</h3>
+                    <p>When most people think of Colorado, they imagine the towering mountains and jagged, snowy terrain. However, Colorado is home to some tall sand dunes in Great Sand Dunes National Park. In addition, most of the eastern half of the state looks more similar to Kansas than your mental image of Colorado; there are a ton of empty, vast, great plains.</p>
+
+                    <h3>Fact #4: Myths and legends of the Denver airport</h3>
+                    <p>For as long as it’s been around, the Denver airport has been tainted by myths and legends of darkness. Many people are off-put by the strange artwork and statues found within the airport, including the infamous horse statue outside or the gargoyles located in random places. Some people speculate the airport might be some sort of bunker or be home to a secret society. While none of these conspiracy theories have been proven true, they’re still fun to imagine.</p>
+
+                    <h3>Fact #5: Gold rush???</h3>
+                    <p>Similar to California, there was also a gold rush in Colorado. Starting in 1858, this short-lived gold rush sparked interest in the state and attracted travelers from all over.</p>
                 </div>
             </section>
         </main>
