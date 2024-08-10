@@ -280,10 +280,9 @@ nav a:hover {
     margin: auto;
 }
 
-/* ---- JAVASCRIPT: SLIDESHOW ---- */
+/* ---- STYLES FOR JAVASCRIPT: SLIDESHOW RELATED FEATURES ---- */
 #slideshow {
     position: relative;
-    overflow: hidden;
     width: 100%;
 }
 
@@ -295,29 +294,31 @@ nav a:hover {
 .prev {
     position: absolute;
     top: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
+    background-color: var(--dark-green);
+    color: var(--tan);
+    border: 1px solid var(--tan);
+    border-radius: 5px;
+    padding: 80px 20px;
     cursor: pointer;
     z-index: 100;
-    left: 10px;
+    left: 0;
 }
 
 .next {
     position: absolute;
     top: 50%;
-    background-color: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px;
+    background-color: var(--dark-green);
+    color: var(--tan);
+    border: 1px solid var(--tan);
+    border-radius: 5px;
+    padding: 80px 20px;
     cursor: pointer;
     z-index: 100;
-    right: 10px;
+    right: 0;
 }
 
-#slider {
-    margin-top: 10px;
+.next:hover, .prev:hover {
+    background-color: var(--light-green);
 }
 
 
